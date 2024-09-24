@@ -1,0 +1,14 @@
+---
+- name: Uninstall Tomcat from web servers
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Stop Tomcat service
+      service:
+        name: tomcat
+        state: stopped
+
+    - name: Disable Tomcat service
+      service:
+        name: tomcat
+        enabled: no 

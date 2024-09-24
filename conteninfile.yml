@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+    - name: Create a file with content
+      copy:
+        dest: /home/ansadmin/content.txt
+        content: |
+          Hello, World!
+          This is a file created by Ansible in one go
+          while creating playbook . 
+

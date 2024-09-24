@@ -1,0 +1,8 @@
+---
+- name: This playbook is used to create a user
+  hosts: all
+  become: true
+  tasks: 
+  - name: creating a user ankit 
+    user: 
+      name: ankit  

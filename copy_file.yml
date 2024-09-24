@@ -1,0 +1,12 @@
+---
+- name: my test file playbook
+  hosts: all
+  become: true
+  tasks:
+   - name: Copy file with owner and permissions
+     copy:
+       src: /home/ansadmin/index.html  
+       dest: /home/ansadmin
+       mode: 0600 
+       owner: ankit 
+ 

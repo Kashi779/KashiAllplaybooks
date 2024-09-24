@@ -1,0 +1,7 @@
+---
+- name: Stop Tomcat using shutdown.sh
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Stop Tomcat service
+      command: /opt/apache-tomcat-10.1.30/bin/shutdown.sh 
