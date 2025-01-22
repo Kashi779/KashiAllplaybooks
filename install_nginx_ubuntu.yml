@@ -1,0 +1,19 @@
+---
+- name: Installing Nginx on Ubuntu systems
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Installing nginx package
+      apt:
+        name: nginx
+        state: present
+      notify: start nginx service
+      when: ansible_facts['os_family'] == 'Debian'
+
+  handlers:
+    - name: Start nginx service
+      service:
+        name: nginx
+        state: started
+      when: ansible_facts['os_family'] == 'Debian'
