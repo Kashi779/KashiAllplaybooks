@@ -1,0 +1,17 @@
+---
+- name: Installing Nginx
+  hosts: ubuntu
+  become: true
+
+  tasks:
+    - name: Installing nginx package
+      apt:
+        name: nginx
+        state: present
+      notify: start nginx service
+      
+  handlers:
+    - name: Start nginx service
+      service:
+        name: nginx
+        state: started
