@@ -1,6 +1,6 @@
 ---
 - name: Installing Nginx
-  hosts: ubuntu
+  hosts: all
   become: true
 
   tasks:
